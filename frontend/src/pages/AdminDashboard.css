@@ -1,0 +1,428 @@
+/* ============================================
+   ADMIN DASHBOARD - PROFESSIONAL DESIGN
+   ============================================ */
+
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #764ba2 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.admin-dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 32px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: #1a202c;
+    line-height: 1.6;
+}
+
+/* --- TYPOGRAPHY --- */
+
+.admin-dashboard h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 48px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-dashboard h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 48px;
+    margin-bottom: 20px;
+    letter-spacing: -0.025em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-dashboard h2::before {
+    content: '';
+    width: 4px;
+    height: 24px;
+    background: linear-gradient(180deg, #fbbf24, #f59e0b);
+    border-radius: 2px;
+}
+
+/* --- ERROR MESSAGES --- */
+
+.admin-dashboard > p {
+    padding: 20px 24px;
+    background-color: #ffffff;
+    color: #dc2626;
+    border-left: 4px solid #ef4444;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* --- LOADING STATE --- */
+
+.admin-dashboard > p:not([style]) {
+    padding: 40px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 0.9375rem;
+    border-radius: 12px;
+}
+
+/* ============================================
+   TABLE CONTAINER
+   ============================================ */
+
+.admin-table-wrapper {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    font-size: 0.9375rem;
+}
+
+/* --- TABLE HEADER --- */
+
+.admin-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.admin-table th {
+    padding: 20px 24px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: none;
+}
+
+/* --- TABLE BODY --- */
+
+.admin-table td {
+    padding: 20px 24px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+    vertical-align: middle;
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- HOVER STATES --- */
+
+.admin-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.admin-table tbody tr:hover {
+    background: linear-gradient(90deg, #fef3c7 0%, #fde68a 100%);
+    transform: scale(1.01);
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+
+/* --- INPUT FIELDS --- */
+
+.admin-table input[type="number"] {
+    width: 90px;
+    padding: 10px 14px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: #1f2937;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    font-weight: 500;
+}
+
+.admin-table input[type="number"]:hover {
+    border-color: #d1d5db;
+}
+
+.admin-table input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.admin-table input[type="file"] {
+    font-size: 0.8125rem;
+    color: #4b5563;
+    padding: 8px 12px;
+    font-family: inherit;
+    border: 2px dashed #d1d5db;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.admin-table input[type="file"]:hover {
+    border-color: #667eea;
+    background-color: #ffffff;
+}
+
+/* --- BUTTONS --- */
+
+.admin-table button {
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+}
+
+/* Accept Button (Green) */
+.admin-table button:first-of-type {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    border-color: transparent;
+}
+
+.admin-table button:first-of-type:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+}
+
+/* Reject Button (Red) */
+.admin-table button:nth-of-type(2) {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: #ffffff;
+    border-color: transparent;
+    margin-left: 8px;
+}
+
+.admin-table button:nth-of-type(2):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.3);
+}
+
+/* Link-style Button */
+.admin-table button[style*="none"] {
+    background: none !important;
+    border: none !important;
+    color: #667eea !important;
+    padding: 0 !important;
+    text-decoration: underline;
+    font-size: 0.8125rem !important;
+    text-transform: none !important;
+}
+
+.admin-table button[style*="none"]:hover {
+    color: #5a67d8 !important;
+}
+
+/* ============================================
+   TABLE CONTENT STYLING
+   ============================================ */
+
+/* Status and Payment Text */
+.admin-table td span {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    background-color: #f3f4f6;
+    color: #6b7280;
+}
+
+/* Architecture Details */
+.admin-table td div[style*="0.8rem"] {
+    margin-top: 8px;
+    padding: 8px 12px;
+    font-size: 0.8125rem !important;
+    color: #6b7280 !important;
+    line-height: 1.5;
+    background-color: #f9fafb;
+    border-radius: 6px;
+    border-left: 3px solid #667eea;
+}
+
+/* Actions Column */
+.admin-table td:last-child {
+    white-space: nowrap;
+}
+
+.admin-table td:last-child > div {
+    display: inline-block;
+}
+
+/* ============================================
+   BADGES & STATUS INDICATORS
+   ============================================ */
+
+/* Role badges in user table */
+.admin-table tbody tr td:nth-child(3) {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+/* Numeric data styling */
+.admin-table tbody tr td:nth-child(4),
+.admin-table tbody tr td:nth-child(5),
+.admin-table tbody tr td:nth-child(6) {
+    font-weight: 600;
+    color: #667eea;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .admin-dashboard {
+        padding: 32px 20px;
+    }
+    
+    .admin-table {
+        font-size: 0.875rem;
+    }
+    
+    .admin-table th,
+    .admin-table td {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-dashboard h1 {
+        font-size: 2rem;
+    }
+    
+    .admin-table-wrapper {
+        overflow-x: auto;
+    }
+    
+    .admin-table {
+        min-width: 800px;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES & ENHANCEMENTS
+   ============================================ */
+
+/* Spacing */
+.admin-dashboard h2:first-of-type {
+    margin-top: 32px;
+}
+
+/* Focus Visible (Accessibility) */
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #fbbf24;
+    outline-offset: 2px;
+}
+
+/* Smooth scrollbar */
+.admin-table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.admin-table-wrapper::-webkit-scrollbar-track {
+    background: #f3f4f6;
+}
+
+.admin-table-wrapper::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 4px;
+}
+
+.admin-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #5a67d8;
+}
+
+/* Status / payment pills */
+.status-pill {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* Status colors */
+.status-pending {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status-accepted {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+.status-ready_for_payment {
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+.status-completed {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.status-rejected {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+/* Payment colors */
+.payment-unpaid {
+    background-color: #fef2f2;
+    color: #b91c1c;
+}
+
+.payment-paid {
+    background-color: #ecfdf5;
+    color: #15803d;
+}
+
+/* Animation for table load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin-table-wrapper {
+    animation: fadeIn 0.5s ease;
+}

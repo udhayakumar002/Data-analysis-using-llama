@@ -1,0 +1,807 @@
+/* Dashboard.css - CORRECTED VERSION */
+
+/* Import Google Fonts (Kept as is) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* CSS Variables for consistent theming (Kept as is) */
+:root {
+  /* Primary Colors */
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-light: #dbeafe;
+
+  /* Neutral Colors */
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text: #1e293b;
+  --color-text-secondary: #64748b;
+  --color-border: #e2e8f0;
+
+  /* Status Colors */
+  --color-success: #10b981;
+  --color-success-light: #d1fae5;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Transitions */
+  --transition: all 0.2s ease-in-out;
+}
+
+/* Global Styles (Kept as is) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Dashboard Container (Kept as is) */
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles (Kept as is) */
+.dashboard-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.dashboard-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.dashboard-header h1::before {
+  content: '📊';
+  font-size: 2rem;
+}
+
+/* Button Styles (Refined for consistency) */
+.btn {
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.btn-primary,
+.report-container button { /* Added the unstyled button here for consistency */
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover:not(:disabled),
+.report-container button:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active:not(:disabled),
+.report-container button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled,
+.report-container button:disabled {
+  background-color: var(--color-text-secondary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn-logout {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.btn-logout:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-download {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.btn-download:hover {
+  background-color: #059669;
+  transform: translateY(-1px);
+}
+
+.btn-download::before {
+  content: '⬇';
+  font-size: 1.1rem;
+}
+
+/* Dashboard Content (Kept as is) */
+.dashboard-content {
+  flex: 1;
+  padding: var(--spacing-2xl);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+/* Section Styles (Kept as is) */
+.dashboard-section {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  transition: var(--transition);
+}
+
+.dashboard-section:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-light);
+}
+
+.dashboard-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.dashboard-section h2::before {
+  content: '';
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: var(--radius-sm);
+}
+
+/* File Upload Container (Refined) */
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg); /* Using variable for consistency */
+}
+
+/* Specific File Input Styling for better UX */
+.file-input {
+  padding: var(--spacing-md);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-background);
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.5; /* Added for better vertical alignment */
+}
+
+.file-input:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.file-input:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+}
+
+.file-input::file-selector-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-right: var(--spacing-md);
+}
+
+.file-input::file-selector-button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.file-info {
+  padding: var(--spacing-md);
+  background-color: var(--color-success-light);
+  border-left: 4px solid var(--color-success);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.file-info p {
+    margin: 0; /* Override default p margin */
+}
+
+.files-list {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Adjusted margin */
+}
+
+.files-list li {
+  padding: 4px 0; /* Slightly reduced padding */
+  color: var(--color-text-secondary); /* Used CSS var for consistency */
+  font-size: 0.875rem; /* Smaller text */
+}
+
+
+/* Report Container */
+.report-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  min-height: 158px;
+}
+
+/* New: Style for the "Generate" button without a class name */
+.report-container button {
+    /* Apply button base styles */
+    /* Use the same padding and properties as .btn */
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+    display: flex; /* Make it a flex container */
+    align-items: center;
+    justify-content: center; /* Center text */
+    gap: var(--spacing-xs);
+    width: 100%; /* Make it full width */
+}
+
+/* Report Preview (Kept the existing unused styles for future use) */
+.report-preview {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ... rest of .report-preview styles ... */
+
+
+/* Job Status (Refined for CSS Variable use) */
+.job-status {
+    padding: var(--spacing-md); /* Using variable for padding */
+    border-radius: var(--radius-sm); /* Using variable for radius */
+    background: var(--color-primary-light);
+    border-left: 4px solid var(--color-primary);
+    font-size: 0.9375rem;
+}
+
+.job-status.running {
+    background: #fff3cd; /* yellow-100 */
+    border-left-color: #ffc107; /* yellow-600 */
+}
+
+.job-status.completed {
+    background: var(--color-success-light);
+    border-left-color: var(--color-success);
+}
+.status-description {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-sm);
+    color: var(--color-text-secondary);
+    font-style: italic;
+    font-size: 0.875rem;
+    text-align: center;
+}
+.status-running {
+    color: #856404; /* dark yellow */
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.status-completed {
+    color: #155724; /* dark green */
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+/* Progress Bar (Kept as is, using variables where possible) */
+.progress-container {
+  margin-top: var(--spacing-lg);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), #764ba2); /* Used var */
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+/* Transformed Files Container */
+.transformed-files-container {
+  padding: var(--spacing-md);
+  background: var(--color-background); /* Used var */
+  border-radius: var(--radius-md);
+}
+
+.files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.file-card {
+  background: var(--color-surface);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.file-card:hover {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  border-color: var(--color-primary);
+}
+
+.file-icon {
+  font-size: 32px;
+}
+
+.file-details {
+  flex: 1;
+}
+
+.file-name {
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+  word-break: break-word;
+  font-size: 13px;
+}
+
+.file-size {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  margin: 5px 0 0 0;
+}
+
+.btn-download-small {
+  padding: 6px 12px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: var(--transition);
+}
+
+.btn-download-small:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn-download-all {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-download-all:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* --- NEW STYLES --- */
+
+/* Floating Chat Icon Button */
+.chat-icon-btn {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    right: var(--spacing-xl);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+.chat-icon-btn:hover {
+    background-color: var(--color-primary-hover);
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px) scale(1.05);
+}
+
+.chat-icon-btn:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+}
+
+/* --- Responsive Design (Kept as is) --- */
+@media (max-width: 1200px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-content {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .dashboard-section {
+    padding: var(--spacing-lg);
+  }
+
+  .dashboard-section h2 {
+    font-size: 1.25rem;
+  }
+
+  .btn,
+  .report-container button { /* Applied to new button as well */
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .chat-icon-btn {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+      bottom: var(--spacing-md);
+      right: var(--spacing-md);
+  }
+}
+
+/* ... rest of media queries and print styles ... */
+
+/* Print styles */
+@media print {
+  .dashboard-header,
+  .btn {
+    display: none;
+  }
+  
+  .dashboard-section {
+    box-shadow: none;
+    border: 1px solid #000;
+    page-break-inside: avoid;
+  }
+}
+/* Folder Upload Styles */
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 2px dashed #667eea;
+}
+
+.file-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Progress Bar */
+.progress-container {
+  margin-top: 15px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+/* Files List */
+.files-info {
+  background: white;
+  padding: 15px;
+  border-radius: 4px;
+  border-left: 4px solid #667eea;
+}
+
+.files-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.files-list li {
+  padding: 8px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Job Status */
+.job-status {
+  padding: 15px;
+  border-radius: 4px;
+  background: #f0f4ff;
+  border-left: 4px solid #667eea;
+}
+
+.job-status.running {
+  background: #fff3cd;
+  border-left-color: #ffc107;
+}
+
+.job-status.completed {
+  background: #d4edda;
+  border-left-color: #28a745;
+}
+
+.status-running {
+  color: #856404;
+  font-weight: 600;
+}
+
+.status-completed {
+  color: #155724;
+  font-weight: 600;
+}
+
+/* Transformed Files Container */
+.transformed-files-container {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.file-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.file-card:hover {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  border-color: #667eea;
+}
+
+.file-icon {
+  font-size: 32px;
+}
+
+.file-details {
+  flex: 1;
+}
+
+.file-name {
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  word-break: break-word;
+  font-size: 13px;
+}
+
+.file-size {
+  color: #999;
+  font-size: 12px;
+  margin: 5px 0 0 0;
+}
+
+.btn-download-small {
+  padding: 6px 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.btn-download-small:hover {
+  background: #764ba2;
+}
+
+.btn-download-all {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-download-all:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* Add this to your existing Dashboard.css file */
+
+/* Position chat rooms icon at bottom right */
+.chat-icon-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-icon-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.chat-icon-btn:active {
+  transform: scale(0.95);
+}
+
+/* ChatWidget will position itself above the chat rooms icon */
+/* The ChatWidget.css should handle its own positioning */
+/* Make sure it has a higher z-index than the chat rooms button */

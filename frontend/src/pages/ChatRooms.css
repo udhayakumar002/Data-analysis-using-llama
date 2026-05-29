@@ -1,0 +1,403 @@
+/* ChatRooms.css - Modern UI Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .chat-rooms-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+  }
+  
+  .chat-rooms-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+  }
+  
+  .chat-rooms-header h1 {
+    font-size: 28px;
+    color: #667eea;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .user-name {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    padding: 10px 20px;
+    background: #f0f4ff;
+    border-radius: 25px;
+  }
+  
+  .btn-back,
+  .btn-logout {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-back {
+    background: #667eea;
+    color: white;
+  }
+  
+  .btn-back:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+  
+  .btn-logout {
+    background: #ff6b6b;
+    color: white;
+  }
+  
+  .btn-logout:hover {
+    background: #ee5a52;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+  }
+  
+  .chat-rooms-content {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0e7ff;
+    padding-bottom: 5px;
+  }
+  
+  .tab-btn {
+    padding: 12px 28px;
+    border: none;
+    background: transparent;
+    color: #666;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .tab-btn:hover {
+    background: #f0f4ff;
+    color: #667eea;
+  }
+  
+  .tab-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+  
+  .tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .tab-content {
+    animation: fadeIn 0.4s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .tab-content h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 700;
+  }
+  
+  .error-message {
+    background: #fee;
+    color: #c33;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #c33;
+    font-weight: 500;
+  }
+  
+  .loading {
+    text-align: center;
+    color: #667eea;
+    font-size: 18px;
+    padding: 40px;
+    font-weight: 500;
+  }
+  
+  .empty-state {
+    text-align: center;
+    color: #999;
+    font-size: 18px;
+    padding: 60px 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 2px dashed #ddd;
+  }
+  
+  .rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+  }
+  
+  .room-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e0e7ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+    border-color: #667eea;
+  }
+  
+  .room-info h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  
+  .room-info p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    min-height: 42px;
+  }
+  
+  .room-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  .members {
+    color: #667eea;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .code-badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  .form-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e0e7ff;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .btn {
+    padding: 14px 32px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+  
+  .btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  }
+  
+  .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .chat-rooms-container {
+      padding: 15px;
+    }
+  
+    .chat-rooms-header {
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+    }
+  
+    .chat-rooms-header h1 {
+      font-size: 24px;
+    }
+  
+    .header-right {
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    .tabs {
+      flex-direction: column;
+      border-bottom: none;
+    }
+  
+    .tab-btn {
+      border-radius: 8px;
+    }
+  
+    .rooms-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .chat-rooms-content {
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .chat-rooms-header h1 {
+      font-size: 20px;
+    }
+  
+    .btn-back,
+    .btn-logout {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  
+    .user-name {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  
+    .room-card {
+      padding: 20px;
+    }
+  }
+.room-card {
+  position: relative;
+}
+
+.btn-delete-room {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-delete-room:hover {
+  background: #cc0000;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-delete-room:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
