@@ -1,0 +1,16 @@
+productid,productname,category,subcategory
+P101,Premium Widget,Electronics,Gadgets
+P102,Basic Gizmo,Electronics,Gadgets
+P103,Durable Bolt,Hardware,Fasteners
+P205,Luxury Desk,Furniture,Office
+P206,Ergonomic Chair,Furniture,Office
+P307,Organic Soap,Wellness,Personal Care
+P308,Scented Candle,Wellness,Home Goods
+P401,Running Shoe,Apparel,Footwear
+P402,Cotton T-Shirt,Apparel,Tops
+P501,Stainless Pan,Kitchen,Cookware
+P502,Glass Tumbler,Kitchen,Drinkware
+P601,Hardcover Book,Media,Books
+P602,E-Reader Device,Media,Electronics
+P701,Garden Hose,Outdoors,Tools
+P702,Camping Tent,Outdoors,Equipment

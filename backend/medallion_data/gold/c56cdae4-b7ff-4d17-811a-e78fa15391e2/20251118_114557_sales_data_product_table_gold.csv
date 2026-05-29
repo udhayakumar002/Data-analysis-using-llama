@@ -1,0 +1,16 @@
+record_id,productid,productname,category,subcategory,productid_is_top5,row_completeness,has_missing_values,load_timestamp,data_quality_score
+1,P101,Premium Widget,Electronics,Gadgets,True,100.0,False,2025-11-18T11:45:58.496669,100.0
+2,P102,Basic Gizmo,Electronics,Gadgets,True,100.0,False,2025-11-18T11:45:58.496669,100.0
+3,P103,Durable Bolt,Hardware,Fasteners,True,100.0,False,2025-11-18T11:45:58.496669,100.0
+4,P205,Luxury Desk,Furniture,Office,True,100.0,False,2025-11-18T11:45:58.496669,100.0
+5,P206,Ergonomic Chair,Furniture,Office,True,100.0,False,2025-11-18T11:45:58.496669,100.0
+6,P307,Organic Soap,Wellness,Personal Care,False,100.0,False,2025-11-18T11:45:58.496669,100.0
+7,P308,Scented Candle,Wellness,Home Goods,False,100.0,False,2025-11-18T11:45:58.496669,100.0
+8,P401,Running Shoe,Apparel,Footwear,False,100.0,False,2025-11-18T11:45:58.496669,100.0
+9,P402,Cotton T-Shirt,Apparel,Tops,False,100.0,False,2025-11-18T11:45:58.496669,100.0
+10,P501,Stainless Pan,Kitchen,Cookware,False,100.0,False,2025-11-18T11:45:58.496669,100.0
+11,P502,Glass Tumbler,Kitchen,Drinkware,False,100.0,False,2025-11-18T11:45:58.496669,100.0
+12,P601,Hardcover Book,Media,Books,False,100.0,False,2025-11-18T11:45:58.496669,100.0
+13,P602,E-Reader Device,Media,Electronics,False,100.0,False,2025-11-18T11:45:58.496669,100.0
+14,P701,Garden Hose,Outdoors,Tools,False,100.0,False,2025-11-18T11:45:58.496669,100.0
+15,P702,Camping Tent,Outdoors,Equipment,False,100.0,False,2025-11-18T11:45:58.496669,100.0

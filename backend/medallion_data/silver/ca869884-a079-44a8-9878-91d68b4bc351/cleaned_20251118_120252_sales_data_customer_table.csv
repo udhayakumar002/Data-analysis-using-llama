@@ -1,0 +1,16 @@
+customerid,customername,region,membershipstatus
+C001,Alice Johnson,North,Gold
+C002,Bob Smith,South,Standard
+C003,Clara Davis,East,Gold
+C004,David Lee,West,Premium
+C005,Eva Green,North,Standard
+C006,Frank Hall,South,Standard
+C007,Grace King,East,Premium
+C008,Henry White,West,Gold
+C009,Ivy Miller,North,Premium
+C010,Jack Ryan,South,Standard
+C011,Kelly Chen,East,Gold
+C012,Liam Baker,West,Standard
+C013,Mia Scott,North,Premium
+C014,Noah Adams,South,Gold
+C015,Olivia Rodriguez,East,Standard

@@ -1,0 +1,24 @@
+{
+  "ingestion_time": "2025-11-17T22:01:51.262021",
+  "files": [
+    {
+      "filename": "20251117_220151_sales_data_customer_table.xlsx",
+      "original_name": "sales_data/customer_table.xlsx",
+      "path": "medallion_data\\bronze\\12bdb170-0c21-4be9-ae66-5a112b2c2a83\\20251117_220151_sales_data_customer_table.xlsx",
+      "size": 5332
+    },
+    {
+      "filename": "20251117_220151_sales_data_product_table.xlsx",
+      "original_name": "sales_data/product_table.xlsx",
+      "path": "medallion_data\\bronze\\12bdb170-0c21-4be9-ae66-5a112b2c2a83\\20251117_220151_sales_data_product_table.xlsx",
+      "size": 5425
+    },
+    {
+      "filename": "20251117_220151_sales_data_revenue_table.xlsx",
+      "original_name": "sales_data/revenue_table.xlsx",
+      "path": "medallion_data\\bronze\\12bdb170-0c21-4be9-ae66-5a112b2c2a83\\20251117_220151_sales_data_revenue_table.xlsx",
+      "size": 6125
+    }
+  ],
+  "layer": "bronze"
+}

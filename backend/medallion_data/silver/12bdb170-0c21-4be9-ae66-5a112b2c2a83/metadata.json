@@ -1,0 +1,75 @@
+{
+  "processing_time": "2025-11-17T22:01:51.762216",
+  "files": [
+    {
+      "source_file": "20251117_220151_sales_data_customer_table.xlsx",
+      "silver_file": "cleaned_20251117_220151_sales_data_customer_table.csv",
+      "original_rows": 15,
+      "processed_rows": 15,
+      "removed_rows": 0,
+      "removed_columns": 0,
+      "columns": [
+        "customerid",
+        "customername",
+        "region",
+        "membershipstatus"
+      ],
+      "data_types": {
+        "customerid": "object",
+        "customername": "object",
+        "region": "object",
+        "membershipstatus": "object"
+      },
+      "status": "success"
+    },
+    {
+      "source_file": "20251117_220151_sales_data_product_table.xlsx",
+      "silver_file": "cleaned_20251117_220151_sales_data_product_table.csv",
+      "original_rows": 15,
+      "processed_rows": 15,
+      "removed_rows": 0,
+      "removed_columns": 0,
+      "columns": [
+        "productid",
+        "productname",
+        "category",
+        "subcategory"
+      ],
+      "data_types": {
+        "productid": "object",
+        "productname": "object",
+        "category": "object",
+        "subcategory": "object"
+      },
+      "status": "success"
+    },
+    {
+      "source_file": "20251117_220151_sales_data_revenue_table.xlsx",
+      "silver_file": "cleaned_20251117_220151_sales_data_revenue_table.csv",
+      "original_rows": 30,
+      "processed_rows": 30,
+      "removed_rows": 0,
+      "removed_columns": 0,
+      "columns": [
+        "orderid",
+        "date",
+        "customerid",
+        "productid",
+        "quantity",
+        "unitprice",
+        "totalrevenue"
+      ],
+      "data_types": {
+        "orderid": "int64",
+        "date": "object",
+        "customerid": "object",
+        "productid": "object",
+        "quantity": "int64",
+        "unitprice": "float64",
+        "totalrevenue": "float64"
+      },
+      "status": "success"
+    }
+  ],
+  "layer": "silver"
+}

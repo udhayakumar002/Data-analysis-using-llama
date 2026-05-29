@@ -1,0 +1,16 @@
+record_id,customerid,customername,region,membershipstatus,customerid_is_top5,row_completeness,has_missing_values,load_timestamp,data_quality_score
+1,C001,Alice Johnson,North,Gold,True,100.0,False,2025-11-18T19:22:54.685370,100.0
+2,C002,Bob Smith,South,Standard,True,100.0,False,2025-11-18T19:22:54.685370,100.0
+3,C003,Clara Davis,East,Gold,True,100.0,False,2025-11-18T19:22:54.685370,100.0
+4,C004,David Lee,West,Premium,True,100.0,False,2025-11-18T19:22:54.685370,100.0
+5,C005,Eva Green,North,Standard,True,100.0,False,2025-11-18T19:22:54.685370,100.0
+6,C006,Frank Hall,South,Standard,False,100.0,False,2025-11-18T19:22:54.685370,100.0
+7,C007,Grace King,East,Premium,False,100.0,False,2025-11-18T19:22:54.685370,100.0
+8,C008,Henry White,West,Gold,False,100.0,False,2025-11-18T19:22:54.685370,100.0
+9,C009,Ivy Miller,North,Premium,False,100.0,False,2025-11-18T19:22:54.685370,100.0
+10,C010,Jack Ryan,South,Standard,False,100.0,False,2025-11-18T19:22:54.685370,100.0
+11,C011,Kelly Chen,East,Gold,False,100.0,False,2025-11-18T19:22:54.685370,100.0
+12,C012,Liam Baker,West,Standard,False,100.0,False,2025-11-18T19:22:54.685370,100.0
+13,C013,Mia Scott,North,Premium,False,100.0,False,2025-11-18T19:22:54.685370,100.0
+14,C014,Noah Adams,South,Gold,False,100.0,False,2025-11-18T19:22:54.685370,100.0
+15,C015,Olivia Rodriguez,East,Standard,False,100.0,False,2025-11-18T19:22:54.685370,100.0

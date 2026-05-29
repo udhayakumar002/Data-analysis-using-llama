@@ -1,0 +1,11 @@
+to kill-> taskkill /IM ollama.exe /F
+to set ip -> set OLLAMA_HOST=0.0.0.0:11434
+to run -> ollama serve
+
+
+
+using another lap
+ipconfig --> note the ip and set in  
+setx OLLAMA_HOST "0.0.0.0:11434"
+restart the lap
+ollama serve
