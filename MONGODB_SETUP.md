@@ -305,4 +305,4 @@ db.users.find()
 For MongoDB help:
 - Official Docs: https://docs.mongodb.com/
 - MongoDB Atlas: https://www.mongodb.com/cloud/atlas
-- Community: https://www.mongodb.com/community/forums
+- Community: https://www.mongodb.com/community/forum
